@@ -1,0 +1,62 @@
+* {
+  font-family: "Courier New";
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.carton::before {
+  content: "";
+  background-image: url("https://floresparaelsendero.files.wordpress.com/2016/08/13696852_145822229188617_1328554058_n.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.2;
+}
+.carton {
+  width: 100%;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(6em, 1fr));
+  grid-gap: 0rem;
+  justify-content: center;
+}
+
+.casillero {
+  border: 1px solid;
+  height: 10vh;
+  opacity: 1;
+}
+
+.central {
+  display: none;
+}
+
+@media only screen and (min-width: 800px) {
+  .carton::before {
+    background-image: none;
+  }
+  .central {
+    display: block;
+    background-image: url("https://floresparaelsendero.files.wordpress.com/2016/08/13696852_145822229188617_1328554058_n.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  .carton {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 0rem;
+    justify-content: center;
+  }
+}

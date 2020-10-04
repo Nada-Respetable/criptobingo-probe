@@ -12,6 +12,9 @@ small, .small{
   font-size: 90%;
   cursor: pointer;
 }
+small:hover, .small:hover{
+  text-decoration: underline;
+}
 header{
   padding: 1em;
 }
@@ -19,6 +22,7 @@ header{
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 2em;
 }
 .carton::before {
   content: "";
@@ -55,15 +59,15 @@ header{
 aside{
   display: none;
 }
-.content-toggle{
-  display: none;
-}
 .explainer{
   display: none;
-  padding-bottom: 2em;
-  max-width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+  position: fixed;
+  height: 100%;
+  max-width: 100%;
+  background: white;
+  padding: 2em;
+  z-index: 9999;
+  top: 0;
 }
 .explainer h2{
   text-align: center;
@@ -74,6 +78,12 @@ aside{
   text-align: center;
 padding-top: 1em;
 }
+.content-toggle{
+position: absolute;
+right: 1.5em;
+top: .5em;
+}
+
 @media only screen and (min-width: 800px) {
   h1{
     position: fixed;
@@ -101,9 +111,10 @@ padding-top: 1em;
     justify-content: center;
   }
   .content-toggle{
+    position: relative;
     display: block;
     text-align: center;
-    padding-top: 2em;
+    right: 0;
   }
   aside{
     display: block;
@@ -114,9 +125,13 @@ padding-top: 1em;
     text-orientation: sideways-right;
   }
   .explainer{
-    width: 90%;
+    background-color: transparent;
+    position: relative;
     margin-left: auto;
     margin-right: auto;
 padding-top: 2em;
+padding-bottom: 2em;
+max-width: 80%;
+
   }
 }
